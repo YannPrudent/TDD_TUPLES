@@ -9,6 +9,7 @@ Created on Mon Jan 13 14:16:24 2020
 class tab_tuples :
 
     def __init__(self, tab = None):
+        self.tab = []
         pass
     
     def ajoute(self, element):
