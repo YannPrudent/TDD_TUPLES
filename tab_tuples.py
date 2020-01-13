@@ -12,6 +12,9 @@ class tab_tuples :
         if tab is None:
             self.tab = []
         else :
+            for i in range (0, len(tab)):
+                if tab[i] is tuple():
+                    raise Exception("l'élément : " + str(i) + " est vide !") 
             self.tab = tab
     
     def ajoute(self, element):
