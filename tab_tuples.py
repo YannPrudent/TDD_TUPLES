@@ -18,7 +18,9 @@ class tab_tuples :
             self.tab = tab
     
     def ajoute(self, element):
-        pass
+        if element is tuple():
+            raise Exception("L'élément que vous essayer d'ajouter est null ")
+        self.tab.append(element)
     
     def supprime(self,index):
         if index > len(self.tab)-1:
@@ -34,13 +36,20 @@ class tab_tuples :
             return self.tab[index]
     
     def somme_totale(self):
-        pass
+        if len(self.tab) is 0 :
+            raise Exception("Le tableau de tuples est vide ")
+        res = 0
+        for i in range (0,len(self.tab)) :
+            res = res + self.tab[i][0] + self.tab[i][1]
+        return res
     
     def somme_partielle(self):
-        pass
+        resTab = []
+        if len(self.tab) is 0 :
+            raise Exception("Le tableau de tuples est vide ")
+        for i in range (0,len(self.tab)) :
+            resTab.append(self.tab[i][0] + self.tab[i][1])
+        return resTab
     
 if __name__ == "__main__":
     pass
-
-
-    
