@@ -17,6 +17,8 @@ class Test_tab_tuples(unittest.TestCase):
         self.assertEqual(len(tab.tab), 2)
         self.assertRaises(Exception, tab_tuples, [tuple()])
         self.assertRaises(Exception, tab_tuples, [tuple([1,2]), tuple()])
+        #test oublié à la création
+        self.assertRaises(Exception, tab_tuples,[])
         
         
     def test_acces_element(self):
