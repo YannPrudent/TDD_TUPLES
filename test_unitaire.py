@@ -19,6 +19,13 @@ class Test_tab_tuples(unittest.TestCase):
         self.assertRaises(Exception, tab_tuples, [tuple([1,2]), tuple()])
         #test oublié à la création
         self.assertRaises(Exception, tab_tuples,[])
+        self.assertRaises(Exception, tab_tuples, [tuple([1,2,3])])
+        self.assertRaises(Exception, tab_tuples, [tuple([1])])
+        #Nouvelles demandes du client
+        self.assertRaises(Exception, tab_tuples,[tuple([1,2]), tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2]),
+                                                 tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2])])
+        self.assertRaises(Exception, tab_tuples, [tuple([0,2]), tuple([-3,1])])
+        self.assertRaises(Exception, tab_tuples, [tuple([10,2]), tuple([3,1])])
         
         
     def test_acces_element(self):
@@ -33,6 +40,15 @@ class Test_tab_tuples(unittest.TestCase):
         self.assertEqual(len(tab.tab), 1)
         self.assertEqual(tab.getTuple(0),tuple([1,2]))
         self.assertRaises(Exception, tab.ajoute, tuple())
+        #test oublié à la création
+        self.assertRaises(Exception, tab_tuples, tuple([1,2,3]))
+        self.assertRaises(Exception, tab_tuples, tuple([1]))
+        #Nouvelles demandes du client
+        self.assertRaises(Exception, tab_tuples, tuple([-3,1]))
+        self.assertRaises(Exception, tab_tuples, tuple([10,2]))
+        tab = tab_tuples([tuple([1,2]), tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2]),
+                                                 tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2])])
+        self.assertRaises(Exception, tab.ajoute(tuple([1,2])))
         
         
     def test_supprimer_element(self):
