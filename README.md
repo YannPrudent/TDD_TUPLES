@@ -24,3 +24,4 @@ API :
 
 		- somme_partielle()
 			- Réalise la somme entre chaque élément de chaque tuple et renvoi un tableau des sommes.
+			
