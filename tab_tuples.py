@@ -21,10 +21,17 @@ class tab_tuples :
         pass
     
     def supprime(self,index):
-        pass
+        if index > len(self.tab)-1:
+            raise Exception("Suppression impossible, index out of range !")
+        else:
+            self.tab.pop(index)
+        
     
     def getTuple(self, index):
-        pass
+        if index > len(self.tab)-1:
+            raise Exception("Acces element : "+ str(index) +" impossible, index out of range !")
+        else:
+            return self.tab[index]
     
     def somme_totale(self):
         pass
