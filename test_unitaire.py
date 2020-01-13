@@ -13,7 +13,7 @@ class Test_tab_tuples(unittest.TestCase):
     def test_creation(self):
         tab = tab_tuples()
         self.assertEqual(len(tab.tab), 0)
-        tab = tab_tuples([tuple([1,2]), tuple([2,3])])
+        tab = tab_tuples([tuple([1,2]), tuple([2,8])])
         self.assertEqual(len(tab.tab), 2)
         self.assertRaises(Exception, tab_tuples, [tuple()])
         self.assertRaises(Exception, tab_tuples, [tuple([1,2]), tuple()])
@@ -41,11 +41,11 @@ class Test_tab_tuples(unittest.TestCase):
         self.assertEqual(tab.getTuple(0),tuple([1,2]))
         self.assertRaises(Exception, tab.ajoute, tuple())
         #test oublié à la création
-        self.assertRaises(Exception, tab_tuples, tuple([1,2,3]))
-        self.assertRaises(Exception, tab_tuples, tuple([1]))
+        self.assertRaises(Exception, tab.ajoute, tuple([1,2,3]))
+        self.assertRaises(Exception, tab.ajoute, tuple([1]))
         #Nouvelles demandes du client
-        self.assertRaises(Exception, tab_tuples, tuple([-3,1]))
-        self.assertRaises(Exception, tab_tuples, tuple([10,2]))
+        self.assertRaises(Exception, tab.ajoute, tuple([-3,1]))
+        self.assertRaises(Exception, tab.ajoute, tuple([10,2]))
         tab = tab_tuples([tuple([1,2]), tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2]),
                                                  tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2])])
         self.assertRaises(Exception, tab.ajoute(tuple([1,2])))
