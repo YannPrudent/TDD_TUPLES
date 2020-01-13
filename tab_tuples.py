@@ -20,15 +20,18 @@ class tab_tuples :
                 if len(tab[i]) is not 2:
                     raise Exception("L'élément : " + str(i) + " a une taille differente de 2")
                 if (tab[i][0] + tab[i][1]) > 10:
-                    raise Exception("La somme des deux elements du tuple est superieur a 10")
+                    raise Exception("La somme de deux elements du tuple est supérieure a 10")
                 if tab[i][0] < 0 or tab[i][1] < 0:
-                    raise Exception ("Les entiers dans un tuple ne peuvent être negatifs")    
+                    raise Exception ("Les entiers d'un tuple ne peuvent être negatifs")    
             self.tab = tab
     
     def ajoute(self, element):
         if len(element) is not 2:
-            print(len(element))
             raise Exception("L'élément que vous essayer d'ajouter est a une taille differente de 2 ")
+        if element[0] < 0 or element[1] < 0:
+            raise Exception("Les entiers du tuple à ajouter ne peuvent être negatifs")
+        if element[0] + element[1] > 10:
+            raise Exception("La somme des deux entiers du tuple à ajouter ne peut être supérieure à 10")
         self.tab.append(element)
     
     def supprime(self,index):
