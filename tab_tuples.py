@@ -7,21 +7,27 @@ Created on Mon Jan 13 14:16:24 2020
 """
 
 class tab_tuples :
-    
-    def __init__(self): 
-        pass
-        
-    def __init__(self, tab): 
+
+    def __init__(self, tab = None):
         pass
     
-    def ajoute(self, element): 
+    def ajoute(self, element):
         pass
     
-    def somme_totale(self): 
+    def supprime(self,index):
         pass
     
-    def somme_partielle(self): 
+    def getTuple(self, index):
+        pass
+    
+    def somme_totale(self):
+        pass
+    
+    def somme_partielle(self):
         pass
     
 if __name__ == "__main__":
     pass
+
+
+    
