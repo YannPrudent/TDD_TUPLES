@@ -12,14 +12,23 @@ class tab_tuples :
         if tab is None:
             self.tab = []
         else :
+            if len(tab) is 0:
+                raise Exception("Le tableau est vide")
+            if len(tab) > 10:
+                raise Exception("Il y a plus de 10 groupes de valeurs dans le tableau")
             for i in range (0, len(tab)):
-                if tab[i] is tuple():
-                    raise Exception("l'élément : " + str(i) + " est vide !") 
+                if len(tab[i]) is not 2:
+                    raise Exception("L'élément : " + str(i) + " a une taille differente de 2")
+                if (tab[i][0] + tab[i][1]) > 10:
+                    raise Exception("La somme des deux elements du tuple est superieur a 10")
+                if tab[i][0] < 0 or tab[i][1] < 0:
+                    raise Exception ("Les entiers dans un tuple ne peuvent être negatifs")    
             self.tab = tab
     
     def ajoute(self, element):
-        if element is tuple():
-            raise Exception("L'élément que vous essayer d'ajouter est null ")
+        if len(element) is not 2:
+            print(len(element))
+            raise Exception("L'élément que vous essayer d'ajouter est a une taille differente de 2 ")
         self.tab.append(element)
     
     def supprime(self,index):
@@ -52,4 +61,7 @@ class tab_tuples :
         return resTab
     
 if __name__ == "__main__":
-    pass
+    tab = tab_tuples([tuple([1,2])])
+    tab.ajoute(tuple([0,3]))
+    print(len(tuple([-3,1])))
+    
