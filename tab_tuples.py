@@ -17,7 +17,9 @@ class tab_tuples :
             :param tab: Le constructeur peut être appelé sans paramètres, auquel cas on construit un tableau de tuple vide.
             Si le constructeur est appelé avec un paramètre, qui doit être un tableau de tuple non vide, 
             dans ce cas on recopie le tableau passé en argument dans le tableau de tuples de notre classe.
-            :type tab: tableau de tuple.
+            Le tableau doit contenir des tuples de taille 2 uniquement.
+            Le tableau passé en argument ne peut pas avoir une taille > 10
+            :type tab: tableau de tuple (taille <=10)
             
         """
         if tab is None:
@@ -39,9 +41,10 @@ class tab_tuples :
     def ajoute(self, element):
         """
             Cette fonction ajoute un élément à notre tableau. 
-            :param element: Elle prend en paramètre un élément de deux entiers positifs.
+            :param element: Elle prend en paramètre un élément de deux entiers positifs (tuple).
             :type element: tuple.
             Il y a des contraintes à l'ajout d'élément qui sont les suivants : 
+                - On ne peut pas ajouter d'éléments si le tableau a déjà une taille de 10
                 - Les entiers du tuple à ajouter ne peuvent être negatifs.
                 - La somme des deux entiers du tuple à ajouter ne peut être supérieure à 10
                 - L'élément doit avoir une taille de 2 (tuple de 2 entiers positifs)
@@ -60,6 +63,9 @@ class tab_tuples :
             :param index: Elle prend en paramètre un index, correspondant à la case que l'on souhaite supprimer
             :type index: int
             On va venir supprimer l'élément à l'index donné en paramètre.
+            Il y a des contraintes pour la suppression d'un élément : 
+                - l'index doit être >= 0 
+                - l'index doit avoir une taille inférieure à la du tableau
         """
         if len(self.tab) is 0 :
             raise Exception ("Le tableau est vide")
@@ -87,6 +93,7 @@ class tab_tuples :
     def somme_totale(self):
         """
             Cette fonction effectue la somme totale de chaque éléments de chaque tuple de notre tableau de tuple.
+            Il existe deux cas particuliers correspondant au strike et au spare.
             :returns: La fonction renvoie la somme totale de chaque éléments de chaque tuple de notre tableau de tuple.
             :rtype: int.
         """
@@ -95,9 +102,9 @@ class tab_tuples :
         res = 0
         for i in range (0,len(self.tab)) :
             if (self.tab[i][0] + self.tab[i][1] is 10) and (self.tab[i][0] is not 10) and i+1 < len(self.tab):
-                res = res + self.tab[i][0] + self.tab[i][1] + self.tab[i+1][0]
+                res = res + self.tab[i][0] + self.tab[i][1] + self.tab[i+1][0] #spare
             elif self.tab[i][0] is 10  and i+1 < len(self.tab):
-                res = res + self.tab[i][0] + self.tab[i+1][0] + self.tab[i+1][1]
+                res = res + self.tab[i][0] + self.tab[i+1][0] + self.tab[i+1][1] #strike
             else:
                 res = res + self.tab[i][0] + self.tab[i][1]
         return res
