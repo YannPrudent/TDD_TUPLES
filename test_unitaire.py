@@ -38,6 +38,8 @@ class Test_tab_tuples(unittest.TestCase):
         self.assertRaises(Exception, tab.getTuple, -2)
         #renvoie la valeur en bout de tableau
         self.assertEqual(tab.getTuple(-1), tuple([1,8]))
+        tab = tab_tuples()
+        self.assertRaises(Exception, tab.getTuple,-1)
         
         
     def test_ajout_element(self):
