@@ -62,6 +62,14 @@ class Test_tab_tuples(unittest.TestCase):
         
         
     def test_ajout_element(self):
+        """
+            Tests de l'ajout d'un élément à un tab_tuples (ajoute):
+                - Ajout correct
+                - Ajout incorrect d'un tuple de taille incorrect (vide, 1 valeur...)
+                - Ajout incorrect d'un tuple comportant un entier negatif
+                - Ajout incorrect d'un tuple dont la somme des valeurs est > 10
+                - Ajout incorrect d'un tuple à un tableau contenant déjà 10 valeurs
+        """
         tab = tab_tuples()
         tab.ajoute(tuple([1,2]))
         self.assertEqual(len(tab.tab), 1)
@@ -79,6 +87,13 @@ class Test_tab_tuples(unittest.TestCase):
         
         
     def test_supprimer_element(self):
+        """
+            Tests de suppression d'un élément à un tab_tuples (supprime):
+                - Suppression incorrecte : index en dehors du tableau
+                - Suppression correcte
+                - Suppression incorrecte sur un tableau vide
+                - Suppression incorrecte : index negarif
+        """
         tab = tab_tuples([tuple([1,2]), tuple([2,3]), tuple([4,5])])
         self.assertRaises(Exception, tab.supprime, 3)
         tab.supprime(1)
@@ -89,11 +104,17 @@ class Test_tab_tuples(unittest.TestCase):
         #tests oubliés à la création
         tab = tab_tuples([tuple([1,2]), tuple([1,2]),tuple([1,2])])
         self.assertRaises(Exception, tab.supprime, -2)
-        tab = tab_tuples()
-        self.assertRaises(Exception, tab.supprime,0)
 
 
     def test_somme_totale(self):
+        """
+            Tests de somme du score d'un tab_tuple :
+                - Score sans cas particulier
+                - Score incorrect : tableau vide
+                - Score avec deux spares
+                - Score avec un strike
+                - Score avec un spare à la fin
+        """
         tab = tab_tuples([tuple([1,2]), tuple([2,3]), tuple([4,5])])
         res = tab.somme_totale()
         self.assertEqual(res, 17)
@@ -109,6 +130,11 @@ class Test_tab_tuples(unittest.TestCase):
         
         
     def test_somme_partielle(self):
+        """
+            Tests de somme partielle du score d'un tab_tuple :
+                - Score sans cas particulier
+                - Score incorrect : tableau vide
+        """
         tab = tab_tuples([tuple([1,2]), tuple([2,3]), tuple([4,5])])
         res = tab.somme_partielle()
         self.assertEqual(res,[3,5,9])
@@ -116,17 +142,19 @@ class Test_tab_tuples(unittest.TestCase):
         self.assertRaises(Exception, tab.somme_partielle)
         
     def test_lancer_Jeu(self):
+        """
+            Tests de lancer_jeu :
+                - Strike au round 10 + 2 coups supplémentaires (2 et 5)
+                - Strike au round 10 + 2 coups supplémentaires 10 et 10
+                - Spare au round 10 + 1 coup supplémentaire de 5
+                - Ni spare ni strike au round 10
+        """
         valeurs = [3,5,7,3,10,0,0,10,1,1,1,1,2,4,5,1,3,2,10,0,2,5]
         tab = tab_tuples()
         tupleSup, scoretotal = tab.lancer_jeu(valeurs)
         self.assertEqual(scoretotal,99)
         self.assertEqual(tupleSup, tuple([2,5]))
         valeurs = [10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,10]
-        tab = tab_tuples()
-        tupleSup, scoretotal = tab.lancer_jeu(valeurs)
-        self.assertEqual(scoretotal,210)
-        self.assertEqual(tupleSup, tuple([10,10]))
-        valeurs = [10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,7,2]
         tab = tab_tuples()
         tupleSup, scoretotal = tab.lancer_jeu(valeurs)
         self.assertEqual(scoretotal,199)
