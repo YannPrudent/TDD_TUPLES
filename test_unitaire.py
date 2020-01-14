@@ -10,7 +10,21 @@ from tab_tuples import *
 import unittest
 
 class Test_tab_tuples(unittest.TestCase):
+    """
+        Classe de tests sur les fonctions de la classe tab_tuples
+    """
+    
     def test_creation(self):
+        """
+            Tests du constructeur de tab_tuples:
+                - constructeur vide
+                - constructeur avec un tableau de 2 tuple en paramètre
+                - Exception lors de la construction d'un tab_tuples avec des tuples de taille incorrecte (vide, 3 valeurs...)
+                - Exception lors de la construction d'un tab_tuples à partir d'un tableau vide
+                - Exception lors de la construction d'un tab_tuples à partir d'un tableau de taille > 10
+                - Exception lors de la construction d'un tab_tuples à partir d'un tableau de tuple avec une valeur negative
+                - Exception lors de la construction d'un tab_tuples à partir d'un tableau contenant un tuple dont la somme des valeurs est > 10
+        """
         tab = tab_tuples()
         self.assertEqual(len(tab.tab), 0)
         tab = tab_tuples([tuple([1,2]), tuple([2,8])])
@@ -29,6 +43,12 @@ class Test_tab_tuples(unittest.TestCase):
         
         
     def test_acces_element(self):
+        """
+            Tests de l'accès aux éléments de tab_tuples (getTuple):
+                - Accès correct
+                - Accès incorrect : index en dehors du tableau (trop grand, negatif)
+                - Acces incorrect : tableau vide
+        """
         tab = tab_tuples([tuple([1,2])])
         self.assertEqual(tab.getTuple(0),tuple([1,2]))
         self.assertRaises(Exception, tab.getTuple, 1)
@@ -38,7 +58,7 @@ class Test_tab_tuples(unittest.TestCase):
         self.assertRaises(Exception, tab.getTuple, -2)
         self.assertRaises(Exception, tab.getTuple, -1)
         tab = tab_tuples()
-        self.assertRaises(Exception, tab.getTuple,-1)
+        self.assertRaises(Exception, tab.getTuple, 0)
         
         
     def test_ajout_element(self):
@@ -94,6 +114,29 @@ class Test_tab_tuples(unittest.TestCase):
         self.assertEqual(res,[3,5,9])
         tab = tab_tuples()
         self.assertRaises(Exception, tab.somme_partielle)
+        
+    def test_lancer_Jeu(self):
+        valeurs = [3,5,7,3,10,0,0,10,1,1,1,1,2,4,5,1,3,2,10,0,2,5]
+        tab = tab_tuples()
+        tupleSup, scoretotal = tab.lancer_jeu(valeurs)
+        self.assertEqual(scoretotal,99)
+        self.assertEqual(tupleSup, tuple([2,5]))
+        valeurs = [10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,10]
+        tab = tab_tuples()
+        tupleSup, scoretotal = tab.lancer_jeu(valeurs)
+        self.assertEqual(scoretotal,210)
+        self.assertEqual(tupleSup, tuple([10,10]))
+        valeurs = [10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,7,2]
+        tab = tab_tuples()
+        tupleSup, scoretotal = tab.lancer_jeu(valeurs)
+        self.assertEqual(scoretotal,199)
+        self.assertEqual(tupleSup, tuple([10,10]))
+        valeurs = [3,5,7,3,2,8,0,10,1,1,1,1,2,4,5,1,3,2,5,5,5]
+        tab = tab_tuples()
+        tupleSup, scoretotal = tab.lancer_jeu(valeurs)
+        self.assertEqual(scoretotal,77)
+        self.assertEqual(tupleSup, tuple([5]))
+        
 
 if __name__ == '__main__':
     unittest.main()
