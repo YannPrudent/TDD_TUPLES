@@ -52,7 +52,10 @@ class tab_tuples :
             raise Exception("Les entiers du tuple à ajouter ne peuvent être negatifs")
         if element[0] + element[1] > 10:
             raise Exception("La somme des deux entiers du tuple à ajouter ne peut être supérieure à 10")
-        self.tab.append(element)
+        if len(self.tab)+1 > 10: 
+            raise Exception("La taille du tableau a dépassé 10")
+        else :
+            self.tab.append(element)
     
     def supprime(self,index):
         """
