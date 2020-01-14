@@ -36,8 +36,7 @@ class Test_tab_tuples(unittest.TestCase):
         tab = tab_tuples([tuple([1,2]), tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2]),
                                                  tuple([1,2]),tuple([3,2]),tuple([1,8])])
         self.assertRaises(Exception, tab.getTuple, -2)
-        #renvoie la valeur en bout de tableau
-        self.assertEqual(tab.getTuple(-1), tuple([1,8]))
+        self.assertRaises(Exception, tab.getTuple, -1)
         tab = tab_tuples()
         self.assertRaises(Exception, tab.getTuple,-1)
         
@@ -65,6 +64,11 @@ class Test_tab_tuples(unittest.TestCase):
         tab.supprime(1)
         self.assertEqual(len(tab.tab), 2)
         self.assertEqual(tab.getTuple(1),tuple([4,5]))
+        tab = tab_tuples()
+        self.assertRaises(Exception, tab.supprime,0)
+        #tests oubliés à la création
+        tab = tab_tuples([tuple([1,2]), tuple([1,2]),tuple([1,2])])
+        self.assertRaises(Exception, tab.supprime, -2)
         tab = tab_tuples()
         self.assertRaises(Exception, tab.supprime,0)
 
