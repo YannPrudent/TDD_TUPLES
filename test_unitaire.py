@@ -71,7 +71,7 @@ class Test_tab_tuples(unittest.TestCase):
         tab = tab_tuples([tuple([8,2]), tuple([5,5]), tuple([4,5])])
         self.assertEqual(tab.somme_totale(), 38)
         tab = tab_tuples([tuple([10,0]), tuple([3,5]), tuple([4,5])])
-        self.assertEqual(tab.somme_totale(), 33)
+        self.assertEqual(tab.somme_totale(), 35)
         tab = tab_tuples([tuple([0,10]), tuple([5,4]), tuple([5,5])])
         self.assertEqual(tab.somme_totale(), 34)
         
