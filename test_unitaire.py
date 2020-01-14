@@ -55,7 +55,7 @@ class Test_tab_tuples(unittest.TestCase):
         self.assertRaises(Exception, tab.ajoute, tuple([10,2]))
         tab = tab_tuples([tuple([1,2]), tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2]),
                                                  tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2])])
-        self.assertRaises(Exception, tab.ajoute(tuple([1,2])))
+        self.assertRaises(Exception, tab.ajoute,tuple([1,2]))
         
         
     def test_supprimer_element(self):
