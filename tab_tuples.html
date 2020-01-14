@@ -38,8 +38,11 @@ et&nbsp;les&nbsp;fonctions&nbsp;qui&nbsp;lui&nbsp;sont&nbsp;associées&nbsp;pour
 :param&nbsp;tab:&nbsp;Le&nbsp;constructeur&nbsp;peut&nbsp;être&nbsp;appelé&nbsp;sans&nbsp;paramètres,&nbsp;auquel&nbsp;cas&nbsp;on&nbsp;construit&nbsp;un&nbsp;tableau&nbsp;de&nbsp;tuple&nbsp;vide.<br>
 Si&nbsp;le&nbsp;constructeur&nbsp;est&nbsp;appelé&nbsp;avec&nbsp;un&nbsp;paramètre,&nbsp;qui&nbsp;doit&nbsp;être&nbsp;un&nbsp;tableau&nbsp;de&nbsp;tuple&nbsp;non&nbsp;vide,&nbsp;<br>
 dans&nbsp;ce&nbsp;cas&nbsp;on&nbsp;recopie&nbsp;le&nbsp;tableau&nbsp;passé&nbsp;en&nbsp;argument&nbsp;dans&nbsp;le&nbsp;tableau&nbsp;de&nbsp;tuples&nbsp;de&nbsp;notre&nbsp;classe.<br>
-Le&nbsp;tableau&nbsp;doit&nbsp;contenir&nbsp;des&nbsp;tuples&nbsp;de&nbsp;taille&nbsp;2&nbsp;uniquement.<br>
-Le&nbsp;tableau&nbsp;passé&nbsp;en&nbsp;argument&nbsp;ne&nbsp;peut&nbsp;pas&nbsp;avoir&nbsp;une&nbsp;taille&nbsp;&gt;&nbsp;10<br>
+Le&nbsp;tableau&nbsp;passé&nbsp;en&nbsp;argument&nbsp;doit&nbsp;suivre&nbsp;les&nbsp;contraintes&nbsp;suivantes&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Le&nbsp;tableau&nbsp;doit&nbsp;contenir&nbsp;des&nbsp;tuples&nbsp;de&nbsp;taille&nbsp;2&nbsp;uniquement.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Le&nbsp;tableau&nbsp;passé&nbsp;en&nbsp;argument&nbsp;ne&nbsp;peut&nbsp;pas&nbsp;avoir&nbsp;une&nbsp;taille&nbsp;&gt;&nbsp;10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Les&nbsp;entiers&nbsp;du&nbsp;tuple&nbsp;à&nbsp;ajouter&nbsp;ne&nbsp;peuvent&nbsp;être&nbsp;negatifs.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;La&nbsp;somme&nbsp;des&nbsp;deux&nbsp;entiers&nbsp;du&nbsp;tuple&nbsp;à&nbsp;ajouter&nbsp;ne&nbsp;peut&nbsp;être&nbsp;supérieure&nbsp;à&nbsp;10<br>
 :type&nbsp;tab:&nbsp;tableau&nbsp;de&nbsp;tuple&nbsp;(taille&nbsp;&lt;=10)</tt></dd></dl>
 
 <dl><dt><a name="tab_tuples-ajoute"><strong>ajoute</strong></a>(self, element)</dt><dd><tt>Cette&nbsp;fonction&nbsp;ajoute&nbsp;un&nbsp;élément&nbsp;à&nbsp;notre&nbsp;tableau.&nbsp;<br>
@@ -73,7 +76,7 @@ Il&nbsp;existe&nbsp;deux&nbsp;cas&nbsp;particuliers&nbsp;correspondant&nbsp;au&n
 On&nbsp;va&nbsp;venir&nbsp;supprimer&nbsp;l'élément&nbsp;à&nbsp;l'index&nbsp;donné&nbsp;en&nbsp;paramètre.<br>
 Il&nbsp;y&nbsp;a&nbsp;des&nbsp;contraintes&nbsp;pour&nbsp;la&nbsp;suppression&nbsp;d'un&nbsp;élément&nbsp;:&nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;l'index&nbsp;doit&nbsp;être&nbsp;&gt;=&nbsp;0&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;l'index&nbsp;doit&nbsp;avoir&nbsp;une&nbsp;taille&nbsp;inférieure&nbsp;à&nbsp;la&nbsp;du&nbsp;tableau</tt></dd></dl>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;l'index&nbsp;doit&nbsp;avoir&nbsp;une&nbsp;taille&nbsp;inférieure&nbsp;à&nbsp;la&nbsp;taille&nbsp;du&nbsp;tableau</tt></dd></dl>
 
 </td></tr></table></td></tr></table>
 </body></html>

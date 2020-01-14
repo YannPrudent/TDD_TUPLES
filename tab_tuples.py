@@ -17,8 +17,11 @@ class tab_tuples :
             :param tab: Le constructeur peut être appelé sans paramètres, auquel cas on construit un tableau de tuple vide.
             Si le constructeur est appelé avec un paramètre, qui doit être un tableau de tuple non vide, 
             dans ce cas on recopie le tableau passé en argument dans le tableau de tuples de notre classe.
-            Le tableau doit contenir des tuples de taille 2 uniquement.
-            Le tableau passé en argument ne peut pas avoir une taille > 10
+            Le tableau passé en argument doit suivre les contraintes suivantes :
+                - Le tableau doit contenir des tuples de taille 2 uniquement.
+                - Le tableau passé en argument ne peut pas avoir une taille > 10
+                - Les entiers du tuple à ajouter ne peuvent être negatifs.
+                - La somme des deux entiers du tuple à ajouter ne peut être supérieure à 10
             :type tab: tableau de tuple (taille <=10)
             
         """
@@ -65,7 +68,7 @@ class tab_tuples :
             On va venir supprimer l'élément à l'index donné en paramètre.
             Il y a des contraintes pour la suppression d'un élément : 
                 - l'index doit être >= 0 
-                - l'index doit avoir une taille inférieure à la du tableau
+                - l'index doit avoir une taille inférieure à la taille du tableau
         """
         if len(self.tab) is 0 :
             raise Exception ("Le tableau est vide")
