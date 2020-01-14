@@ -67,6 +67,13 @@ class Test_tab_tuples(unittest.TestCase):
         self.assertEqual(res, 17)
         tab = tab_tuples()
         self.assertRaises(Exception, tab.somme_totale)
+        #Nouvelles demandes du client 2
+        tab = tab_tuples([tuple([8,2]), tuple([5,5]), tuple([4,5])])
+        self.assertEqual(tab.somme_totale(), 38)
+        tab = tab_tuples([tuple([10,0]), tuple([3,5]), tuple([4,5])])
+        self.assertEqual(tab.somme_totale(), 33)
+        tab = tab_tuples([tuple([0,10]), tuple([5,4]), tuple([5,5])])
+        self.assertEqual(tab.somme_totale(), 34)
         
         
     def test_somme_partielle(self):
