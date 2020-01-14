@@ -136,6 +136,11 @@ class Test_tab_tuples(unittest.TestCase):
         tupleSup, scoretotal = tab.lancer_jeu(valeurs)
         self.assertEqual(scoretotal,77)
         self.assertEqual(tupleSup, tuple([5]))
+        valeurs = [3,5,7,3,2,8,0,10,1,1,1,1,2,4,5,1,3,2,5,2]
+        tab = tab_tuples()
+        tupleSup, scoretotal = tab.lancer_jeu(valeurs)
+        self.assertEqual(scoretotal,69)
+        self.assertEqual(tupleSup, tuple())
         
 
 if __name__ == '__main__':
