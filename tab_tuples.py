@@ -5,7 +5,6 @@ Created on Mon Jan 13 14:16:24 2020
 
 @author: leila.nedjar
 """
-
 class tab_tuples :
 
     def __init__(self, tab = None):
@@ -35,14 +34,18 @@ class tab_tuples :
         self.tab.append(element)
     
     def supprime(self,index):
-        if index > len(self.tab)-1:
+        if len(self.tab) is 0 :
+            raise Exception ("Le tableau est vide")
+        if index > len(self.tab)-1 or index < 0:
             raise Exception("Suppression impossible, index out of range !")
         else:
             self.tab.pop(index)
         
     
     def getTuple(self, index):
-        if index > len(self.tab)-1:
+        if len(self.tab) is 0 :
+            raise Exception ("Le tableau est vide")
+        if index > len(self.tab)-1 or index < 0:
             raise Exception("Acces element : "+ str(index) +" impossible, index out of range !")
         else:
             return self.tab[index]
@@ -52,7 +55,12 @@ class tab_tuples :
             raise Exception("Le tableau de tuples est vide ")
         res = 0
         for i in range (0,len(self.tab)) :
-            res = res + self.tab[i][0] + self.tab[i][1]
+            if (self.tab[i][0] + self.tab[i][1] is 10) and (self.tab[i][0] is not 10) and i+1 < len(self.tab):
+                res = res + self.tab[i][0] + self.tab[i][1] + self.tab[i+1][0]
+            elif self.tab[i][0] is 10  and i+1 < len(self.tab):
+                res = res + self.tab[i][0] + self.tab[i+1][0] + self.tab[i+1][1]
+            else:
+                res = res + self.tab[i][0] + self.tab[i][1]
         return res
     
     def somme_partielle(self):
@@ -64,7 +72,4 @@ class tab_tuples :
         return resTab
     
 if __name__ == "__main__":
-    tab = tab_tuples([tuple([1,2])])
-    tab.ajoute(tuple([0,3]))
-    print(len(tuple([-3,1])))
-    
+    pass
