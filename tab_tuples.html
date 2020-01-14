@@ -1,0 +1,82 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module tab_tuples</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>tab_tuples</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/rvende/Bureau/APP4/qualite_logicielle/TDD_TUPLES/tab_tuples.py">/home/rvende/Bureau/APP4/qualite_logicielle/TDD_TUPLES/tab_tuples.py</a></font></td></tr></table>
+    <p><tt>Created&nbsp;on&nbsp;Mon&nbsp;Jan&nbsp;13&nbsp;14:16:24&nbsp;2020<br>
+&nbsp;<br>
+@author:&nbsp;leila.nedjar</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="tab_tuples.html#tab_tuples">tab_tuples</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="tab_tuples">class <strong>tab_tuples</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Cette&nbsp;classe&nbsp;permet&nbsp;d'avoir&nbsp;un&nbsp;tableau&nbsp;de&nbsp;tuples&nbsp;<br>
+et&nbsp;les&nbsp;fonctions&nbsp;qui&nbsp;lui&nbsp;sont&nbsp;associées&nbsp;pour&nbsp;travailler&nbsp;avec&nbsp;ce&nbsp;tableau<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="tab_tuples-__init__"><strong>__init__</strong></a>(self, tab<font color="#909090">=None</font>)</dt><dd><tt>Cette&nbsp;fonction&nbsp;est&nbsp;le&nbsp;constructeur,<br>
+:param&nbsp;tab:&nbsp;Le&nbsp;constructeur&nbsp;peut&nbsp;être&nbsp;appelé&nbsp;sans&nbsp;paramètres,&nbsp;auquel&nbsp;cas&nbsp;on&nbsp;construit&nbsp;un&nbsp;tableau&nbsp;de&nbsp;tuple&nbsp;vide.<br>
+Si&nbsp;le&nbsp;constructeur&nbsp;est&nbsp;appelé&nbsp;avec&nbsp;un&nbsp;paramètre,&nbsp;qui&nbsp;doit&nbsp;être&nbsp;un&nbsp;tableau&nbsp;de&nbsp;tuple&nbsp;non&nbsp;vide,&nbsp;<br>
+dans&nbsp;ce&nbsp;cas&nbsp;on&nbsp;recopie&nbsp;le&nbsp;tableau&nbsp;passé&nbsp;en&nbsp;argument&nbsp;dans&nbsp;le&nbsp;tableau&nbsp;de&nbsp;tuples&nbsp;de&nbsp;notre&nbsp;classe.<br>
+Le&nbsp;tableau&nbsp;passé&nbsp;en&nbsp;argument&nbsp;doit&nbsp;suivre&nbsp;les&nbsp;contraintes&nbsp;suivantes&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Le&nbsp;tableau&nbsp;doit&nbsp;contenir&nbsp;des&nbsp;tuples&nbsp;de&nbsp;taille&nbsp;2&nbsp;uniquement.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Le&nbsp;tableau&nbsp;passé&nbsp;en&nbsp;argument&nbsp;ne&nbsp;peut&nbsp;pas&nbsp;avoir&nbsp;une&nbsp;taille&nbsp;&gt;&nbsp;10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Les&nbsp;entiers&nbsp;du&nbsp;tuple&nbsp;à&nbsp;ajouter&nbsp;ne&nbsp;peuvent&nbsp;être&nbsp;negatifs.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;La&nbsp;somme&nbsp;des&nbsp;deux&nbsp;entiers&nbsp;du&nbsp;tuple&nbsp;à&nbsp;ajouter&nbsp;ne&nbsp;peut&nbsp;être&nbsp;supérieure&nbsp;à&nbsp;10<br>
+:type&nbsp;tab:&nbsp;tableau&nbsp;de&nbsp;tuple&nbsp;(taille&nbsp;&lt;=10)</tt></dd></dl>
+
+<dl><dt><a name="tab_tuples-ajoute"><strong>ajoute</strong></a>(self, element)</dt><dd><tt>Cette&nbsp;fonction&nbsp;ajoute&nbsp;un&nbsp;élément&nbsp;à&nbsp;notre&nbsp;tableau.&nbsp;<br>
+:param&nbsp;element:&nbsp;Elle&nbsp;prend&nbsp;en&nbsp;paramètre&nbsp;un&nbsp;élément&nbsp;de&nbsp;deux&nbsp;entiers&nbsp;positifs&nbsp;(tuple).<br>
+:type&nbsp;element:&nbsp;tuple.<br>
+Il&nbsp;y&nbsp;a&nbsp;des&nbsp;contraintes&nbsp;à&nbsp;l'ajout&nbsp;d'élément&nbsp;qui&nbsp;sont&nbsp;les&nbsp;suivants&nbsp;:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;On&nbsp;ne&nbsp;peut&nbsp;pas&nbsp;ajouter&nbsp;d'éléments&nbsp;si&nbsp;le&nbsp;tableau&nbsp;a&nbsp;déjà&nbsp;une&nbsp;taille&nbsp;de&nbsp;10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Les&nbsp;entiers&nbsp;du&nbsp;tuple&nbsp;à&nbsp;ajouter&nbsp;ne&nbsp;peuvent&nbsp;être&nbsp;negatifs.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;La&nbsp;somme&nbsp;des&nbsp;deux&nbsp;entiers&nbsp;du&nbsp;tuple&nbsp;à&nbsp;ajouter&nbsp;ne&nbsp;peut&nbsp;être&nbsp;supérieure&nbsp;à&nbsp;10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;L'élément&nbsp;doit&nbsp;avoir&nbsp;une&nbsp;taille&nbsp;de&nbsp;2&nbsp;(tuple&nbsp;de&nbsp;2&nbsp;entiers&nbsp;positifs)</tt></dd></dl>
+
+<dl><dt><a name="tab_tuples-getTuple"><strong>getTuple</strong></a>(self, index)</dt><dd><tt>Cette&nbsp;fonction&nbsp;renvoie&nbsp;un&nbsp;tuple.<br>
+:param&nbsp;index:&nbsp;Elle&nbsp;prend&nbsp;en&nbsp;paramètre&nbsp;un&nbsp;index&nbsp;correspondant&nbsp;à&nbsp;une&nbsp;case&nbsp;du&nbsp;tableau&nbsp;de&nbsp;tuple.<br>
+:type&nbsp;index:&nbsp;int<br>
+:returns:&nbsp;La&nbsp;fonction&nbsp;renvoie&nbsp;donc&nbsp;le&nbsp;tuple&nbsp;correspondant&nbsp;à&nbsp;l'index&nbsp;donnée.<br>
+:rtype:&nbsp;tuple</tt></dd></dl>
+
+<dl><dt><a name="tab_tuples-somme_partielle"><strong>somme_partielle</strong></a>(self)</dt><dd><tt>Cette&nbsp;fonction&nbsp;effectue&nbsp;la&nbsp;somme&nbsp;partielle&nbsp;de&nbsp;notre&nbsp;tableau&nbsp;de&nbsp;tuple.<br>
+Elle&nbsp;va&nbsp;aditionner&nbsp;les&nbsp;éléments&nbsp;de&nbsp;chaque&nbsp;tuple&nbsp;un&nbsp;à&nbsp;un&nbsp;et&nbsp;renvoyer&nbsp;un&nbsp;tableau&nbsp;contenant&nbsp;la&nbsp;somme&nbsp;de&nbsp;chaque&nbsp;tuple.<br>
+:returns:&nbsp;tableau&nbsp;contenant&nbsp;la&nbsp;somme&nbsp;de&nbsp;chaque&nbsp;tuple.<br>
+:rtype:&nbsp;tableau&nbsp;de&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="tab_tuples-somme_totale"><strong>somme_totale</strong></a>(self)</dt><dd><tt>Cette&nbsp;fonction&nbsp;effectue&nbsp;la&nbsp;somme&nbsp;totale&nbsp;de&nbsp;chaque&nbsp;éléments&nbsp;de&nbsp;chaque&nbsp;tuple&nbsp;de&nbsp;notre&nbsp;tableau&nbsp;de&nbsp;tuple.<br>
+Il&nbsp;existe&nbsp;deux&nbsp;cas&nbsp;particuliers&nbsp;correspondant&nbsp;au&nbsp;strike&nbsp;et&nbsp;au&nbsp;spare.<br>
+:returns:&nbsp;La&nbsp;fonction&nbsp;renvoie&nbsp;la&nbsp;somme&nbsp;totale&nbsp;de&nbsp;chaque&nbsp;éléments&nbsp;de&nbsp;chaque&nbsp;tuple&nbsp;de&nbsp;notre&nbsp;tableau&nbsp;de&nbsp;tuple.<br>
+:rtype:&nbsp;int.</tt></dd></dl>
+
+<dl><dt><a name="tab_tuples-supprime"><strong>supprime</strong></a>(self, index)</dt><dd><tt>Cette&nbsp;fonction&nbsp;supprime&nbsp;un&nbsp;élément&nbsp;du&nbsp;tableau.<br>
+:param&nbsp;index:&nbsp;Elle&nbsp;prend&nbsp;en&nbsp;paramètre&nbsp;un&nbsp;index,&nbsp;correspondant&nbsp;à&nbsp;la&nbsp;case&nbsp;que&nbsp;l'on&nbsp;souhaite&nbsp;supprimer<br>
+:type&nbsp;index:&nbsp;int<br>
+On&nbsp;va&nbsp;venir&nbsp;supprimer&nbsp;l'élément&nbsp;à&nbsp;l'index&nbsp;donné&nbsp;en&nbsp;paramètre.<br>
+Il&nbsp;y&nbsp;a&nbsp;des&nbsp;contraintes&nbsp;pour&nbsp;la&nbsp;suppression&nbsp;d'un&nbsp;élément&nbsp;:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;l'index&nbsp;doit&nbsp;être&nbsp;&gt;=&nbsp;0&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;l'index&nbsp;doit&nbsp;avoir&nbsp;une&nbsp;taille&nbsp;inférieure&nbsp;à&nbsp;la&nbsp;taille&nbsp;du&nbsp;tableau</tt></dd></dl>
+
+</td></tr></table></td></tr></table>
+</body></html>
