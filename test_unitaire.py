@@ -157,7 +157,7 @@ class Test_tab_tuples(unittest.TestCase):
         valeurs = [10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,10]
         tab = tab_tuples()
         tupleSup, scoretotal = tab.lancer_jeu(valeurs)
-        self.assertEqual(scoretotal,199)
+        self.assertEqual(scoretotal,210)
         self.assertEqual(tupleSup, tuple([10,10]))
         valeurs = [3,5,7,3,2,8,0,10,1,1,1,1,2,4,5,1,3,2,5,5,5]
         tab = tab_tuples()
