@@ -19,6 +19,7 @@ class tab_tuples :
             dans ce cas on recopie le tableau passé en argument dans le tableau de tuples de notre classe.
             Le tableau passé en argument doit suivre les contraintes suivantes :
                 - Le tableau doit contenir des tuples de taille 2 uniquement.
+                - Le tuple doit contenir que des entiers.
                 - Le tableau passé en argument ne peut pas avoir une taille > 10
                 - Les entiers du tuple à ajouter ne peuvent être negatifs.
                 - La somme des deux entiers du tuple à ajouter ne peut être supérieure à 10
@@ -35,6 +36,8 @@ class tab_tuples :
             for i in range (0, len(tab)):
                 if len(tab[i]) is not 2:
                     raise Exception("L'élément : " + str(i) + " a une taille differente de 2")
+                if not isinstance(tab[i][0], int) or not isinstance(tab[i][1], int):
+                    raise Exception("Les éléments d'un tuple doivent etre des entiers! ") 
                 if (tab[i][0] + tab[i][1]) > 10:
                     raise Exception("La somme de deux elements du tuple est supérieure a 10")
                 if tab[i][0] < 0 or tab[i][1] < 0:
@@ -48,16 +51,19 @@ class tab_tuples :
             :type element: tuple.
             Il y a des contraintes à l'ajout d'élément qui sont les suivants : 
                 - On ne peut pas ajouter d'éléments si le tableau a déjà une taille de 10
+                - L'élement à ajouter doit contenir deux entiers.
                 - Les entiers du tuple à ajouter ne peuvent être negatifs.
                 - La somme des deux entiers du tuple à ajouter ne peut être supérieure à 10
                 - L'élément doit avoir une taille de 2 (tuple de 2 entiers positifs)
         """
         if len(element) is not 2:
             raise Exception("L'element que vous essayer d'ajouter est a une taille differente de 2 ")
+        if not isinstance(element[0], int) or not isinstance(element[1], int) :
+            raise Exception("L'élément entré n'est pas un entier! ")
         if element[0] < 0 or element[1] < 0:
             raise Exception("Les entiers du tuple a ajouter ne peuvent etre negatifs")
         if element[0] + element[1] > 10:
-            raise Exception("La somme des deux entiers du tuple a ajouter ne peut etre superieure à 10")
+            raise Exception("La somme des deux entiers du tuple a ajouter ne peut etre superieure a 10")
         if len(self.tab)+1 > 10: 
             raise Exception("La taille du tableau a depasse 10")
         else :
@@ -142,9 +148,10 @@ class tab_tuples :
             try :    
                 self.ajoute(tuple([v1,v2]))
             except Exception:
-                print("La valeur du tuple est incorrect")
+                print("La valeur du tuple est incorrect \n")
             else :
                 i+=1  
+        # spare/ strike         
         if self.tab[-1][0] is 10 :
             while True:
                 if listValue is None:
@@ -177,6 +184,7 @@ class tab_tuples :
         else :
             score = 0
         score += self.somme_totale()
+        print("Le score est de : " + str(score))
         return tupleSup, score        
                 
 if __name__ == "__main__":
@@ -186,4 +194,3 @@ if __name__ == "__main__":
     if entree is 1 :
         tab = tab_tuples()
         tab.lancer_jeu()
-    
