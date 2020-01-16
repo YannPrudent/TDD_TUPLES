@@ -53,13 +53,13 @@ class tab_tuples :
                 - L'élément doit avoir une taille de 2 (tuple de 2 entiers positifs)
         """
         if len(element) is not 2:
-            raise Exception("L'élément que vous essayer d'ajouter est a une taille differente de 2 ")
+            raise Exception("L'element que vous essayer d'ajouter est a une taille differente de 2 ")
         if element[0] < 0 or element[1] < 0:
-            raise Exception("Les entiers du tuple à ajouter ne peuvent être negatifs")
+            raise Exception("Les entiers du tuple a ajouter ne peuvent etre negatifs")
         if element[0] + element[1] > 10:
-            raise Exception("La somme des deux entiers du tuple à ajouter ne peut être supérieure à 10")
+            raise Exception("La somme des deux entiers du tuple a ajouter ne peut etre superieure à 10")
         if len(self.tab)+1 > 10: 
-            raise Exception("La taille du tableau a dépassé 10")
+            raise Exception("La taille du tableau a depasse 10")
         else :
             self.tab.append(element)
     
@@ -129,5 +129,61 @@ class tab_tuples :
             resTab.append(self.tab[i][0] + self.tab[i][1])
         return resTab
     
+    def lancer_jeu(self,listValue = None):
+        i = 1
+        tupleSup = tuple()
+        while i <= 10:
+            if listValue is None:
+                v1 = input("Entrer la premiere valeur de votre "+ str(i) + " tuple \n")
+                v2 = input("Entrer la deuxieme valeur de votre "+ str(i) + " tuple \n")
+            else :
+                v1 = listValue[2*(i-1)]
+                v2 = listValue[2*(i-1)+1]
+            try :    
+                self.ajoute(tuple([v1,v2]))
+            except Exception:
+                print("La valeur du tuple est incorrect")
+            else :
+                i+=1  
+        if self.tab[-1][0] is 10 :
+            while True:
+                if listValue is None:
+                    v1 = input("Entrer la premiere valeur de votre tuple \n")
+                    v2 = input("Entrer la deuxieme valeur de votre tuple \n")
+                else :
+                    v1 = listValue[20]
+                    v2 = listValue[21]
+                
+                if v1 is 10 and v2 <= 10:
+                    tupleSup = tuple([v1,v2])
+                    break
+                elif v1 + v2 <= 10 and v2 >= 0 and v1 >= 0:
+                    tupleSup = tuple([v1,v2])
+                    break
+                else:
+                    print("Valeurs fausses! entrer les valeurs une nouvelle fois")
+            score = v1+v2
+                
+        elif self.tab[-1][0] +self.tab[-1][1] is 10:
+            while True:
+                if listValue is None:
+                    v1 = input("Entrer la premiere valeur de votre tuple \n")
+                else :
+                    v1 = listValue[20]
+                if v1 >= 0 and v1 <= 10 :
+                    tupleSup = tuple([v1])
+                    break
+            score = v1
+        else :
+            score = 0
+        score += self.somme_totale()
+        return tupleSup, score        
+                
 if __name__ == "__main__":
-    pass
+    
+    entree = input("Enter 1 pour lancer le jeu sinon 0\n")
+    
+    if entree is 1 :
+        tab = tab_tuples()
+        tab.lancer_jeu()
+    
