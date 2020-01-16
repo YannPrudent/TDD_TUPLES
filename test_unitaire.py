@@ -24,6 +24,14 @@ class Test_tab_tuples(unittest.TestCase):
                 - Exception lors de la construction d'un tab_tuples à partir d'un tableau de taille > 10
                 - Exception lors de la construction d'un tab_tuples à partir d'un tableau de tuple avec une valeur negative
                 - Exception lors de la construction d'un tab_tuples à partir d'un tableau contenant un tuple dont la somme des valeurs est > 10
+                - Exception lors de la construction d'un tab_tuples à partir d'un tableau contenant un tuple contenant un float
+                - Exception lors de la construction d'un tab_tuples à partir d'un tableau contenant un tuple contenant un char
+                - Exception lors de la construction d'un tab_tuples à partir d'un tableau contenant un tuple contenant un string
+                - Exception lors de la construction d'un tab_tuples à partir d'un tableau contenant un tuple contenant une liste de string
+                - Exception lors de la construction d'un tab_tuples à partir d'un tableau contenant un tuple contenant un set
+                - Exception lors de la construction d'un tab_tuples à partir d'un tableau contenant un tuple contenant un complexe
+                - Exception lors de la construction d'un tab_tuples à partir d'un tableau contenant un tuple contenant lui même un tuple avec des string
+                - Exception lors de la construction d'un tab_tuples à partir d'un tableau contenant un tuple contenant un dictionnaire.
         """
         tab = tab_tuples()
         self.assertEqual(len(tab.tab), 0)
@@ -40,6 +48,15 @@ class Test_tab_tuples(unittest.TestCase):
                                                  tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2])])
         self.assertRaises(Exception, tab_tuples, [tuple([0,2]), tuple([-3,1])])
         self.assertRaises(Exception, tab_tuples, [tuple([10,2]), tuple([3,1])])
+
+        self.assertRaises(Exception, tab_tuples, [tuple([0,2.])])#float
+        self.assertRaises(Exception, tab_tuples, [tuple([0,'l'])])#char
+        self.assertRaises(Exception, tab_tuples, [tuple([0,"pynative.com"])])#string
+        self.assertRaises(Exception, tab_tuples, [tuple([0,["Eric", "Scott", "Kelly"]])])#list
+        self.assertRaises(Exception, tab_tuples, [tuple([0,{11, 22, 33, 44, 55}])])#set
+        self.assertRaises(Exception, tab_tuples, [tuple([0,1+2j])])#complex
+        self.assertRaises(Exception, tab_tuples, [tuple([0,("Sam","Developer", 10000)])])#tuple
+        self.assertRaises(Exception, tab_tuples, [tuple([0,{"John":80, "Eric":70, "Donald":90}])])#dict
         
         
     def test_acces_element(self):
@@ -69,6 +86,14 @@ class Test_tab_tuples(unittest.TestCase):
                 - Ajout incorrect d'un tuple comportant un entier negatif
                 - Ajout incorrect d'un tuple dont la somme des valeurs est > 10
                 - Ajout incorrect d'un tuple à un tableau contenant déjà 10 valeurs
+                - Ajout incorrect d'un tuple avec un float
+                - Ajout incorrect d'un tuple avec un char
+                - Ajout incorrect d'un tuple avec un string
+                - Ajout incorrect d'un tuple avec une list
+                - Ajout incorrect d'un tuple avec un set
+                - Ajout incorrect d'un tuple avec un complex
+                - Ajout incorrect d'un tuple avec un tuple contenant des string
+                - Ajout incorrect d'un tuple avec un dictionnaire
         """
         tab = tab_tuples()
         tab.ajoute(tuple([1,2]))
@@ -84,6 +109,15 @@ class Test_tab_tuples(unittest.TestCase):
         tab = tab_tuples([tuple([1,2]), tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2]),
                                                  tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2]),tuple([1,2])])
         self.assertRaises(Exception, tab.ajoute,tuple([1,2]))
+
+        self.assertRaises(Exception, tab.ajoute, tuple([0,2.]))#float
+        self.assertRaises(Exception, tab.ajoute, tuple([0,'l']))#char
+        self.assertRaises(Exception, tab.ajoute, tuple([0,"pynative.com"]))#string
+        self.assertRaises(Exception, tab.ajoute, tuple([0,["Eric", "Scott", "Kelly"]]))#list
+        self.assertRaises(Exception, tab.ajoute, tuple([0,{11, 22, 33, 44, 55}]))#set
+        self.assertRaises(Exception, tab.ajoute, tuple([0,1+2j]))#complex
+        self.assertRaises(Exception, tab.ajoute, tuple([0,("Sam","Developer", 10000)]))#tuple
+        self.assertRaises(Exception, tab.ajoute, tuple([0,{"John":80, "Eric":70, "Donald":90}]))#dict
         
         
     def test_supprimer_element(self):

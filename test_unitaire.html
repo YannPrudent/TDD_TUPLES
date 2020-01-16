@@ -9,7 +9,7 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>test_unitaire</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/tp-home008/aly1/Documents/app4/softwareQuality/TDD_TUPLES/test_unitaire.py">/home/tp-home008/aly1/Documents/app4/softwareQuality/TDD_TUPLES/test_unitaire.py</a></font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/rvende/Bureau/APP4/qualite_logicielle/TDD_TUPLES/test_unitaire.py">/home/rvende/Bureau/APP4/qualite_logicielle/TDD_TUPLES/test_unitaire.py</a></font></td></tr></table>
     <p><tt>Created&nbsp;on&nbsp;Mon&nbsp;Jan&nbsp;13&nbsp;14:03:51&nbsp;2020<br>
 &nbsp;<br>
 @author:&nbsp;audrey.ly</tt></p>
@@ -62,7 +62,15 @@ Methods defined here:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Ajout&nbsp;incorrect&nbsp;d'un&nbsp;tuple&nbsp;de&nbsp;taille&nbsp;incorrect&nbsp;(vide,&nbsp;1&nbsp;valeur...)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Ajout&nbsp;incorrect&nbsp;d'un&nbsp;tuple&nbsp;comportant&nbsp;un&nbsp;entier&nbsp;negatif<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Ajout&nbsp;incorrect&nbsp;d'un&nbsp;tuple&nbsp;dont&nbsp;la&nbsp;somme&nbsp;des&nbsp;valeurs&nbsp;est&nbsp;&gt;&nbsp;10<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Ajout&nbsp;incorrect&nbsp;d'un&nbsp;tuple&nbsp;à&nbsp;un&nbsp;tableau&nbsp;contenant&nbsp;déjà&nbsp;10&nbsp;valeurs</tt></dd></dl>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Ajout&nbsp;incorrect&nbsp;d'un&nbsp;tuple&nbsp;à&nbsp;un&nbsp;tableau&nbsp;contenant&nbsp;déjà&nbsp;10&nbsp;valeurs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Ajout&nbsp;incorrect&nbsp;d'un&nbsp;tuple&nbsp;avec&nbsp;un&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Ajout&nbsp;incorrect&nbsp;d'un&nbsp;tuple&nbsp;avec&nbsp;un&nbsp;char<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Ajout&nbsp;incorrect&nbsp;d'un&nbsp;tuple&nbsp;avec&nbsp;un&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Ajout&nbsp;incorrect&nbsp;d'un&nbsp;tuple&nbsp;avec&nbsp;une&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Ajout&nbsp;incorrect&nbsp;d'un&nbsp;tuple&nbsp;avec&nbsp;un&nbsp;set<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Ajout&nbsp;incorrect&nbsp;d'un&nbsp;tuple&nbsp;avec&nbsp;un&nbsp;complex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Ajout&nbsp;incorrect&nbsp;d'un&nbsp;tuple&nbsp;avec&nbsp;un&nbsp;tuple&nbsp;contenant&nbsp;des&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Ajout&nbsp;incorrect&nbsp;d'un&nbsp;tuple&nbsp;avec&nbsp;un&nbsp;dictionnaire</tt></dd></dl>
 
 <dl><dt><a name="Test_tab_tuples-test_creation"><strong>test_creation</strong></a>(self)</dt><dd><tt>Tests&nbsp;du&nbsp;constructeur&nbsp;de&nbsp;tab_tuples:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;constructeur&nbsp;vide<br>
@@ -71,7 +79,15 @@ Methods defined here:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Exception&nbsp;lors&nbsp;de&nbsp;la&nbsp;construction&nbsp;d'un&nbsp;tab_tuples&nbsp;à&nbsp;partir&nbsp;d'un&nbsp;tableau&nbsp;vide<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Exception&nbsp;lors&nbsp;de&nbsp;la&nbsp;construction&nbsp;d'un&nbsp;tab_tuples&nbsp;à&nbsp;partir&nbsp;d'un&nbsp;tableau&nbsp;de&nbsp;taille&nbsp;&gt;&nbsp;10<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Exception&nbsp;lors&nbsp;de&nbsp;la&nbsp;construction&nbsp;d'un&nbsp;tab_tuples&nbsp;à&nbsp;partir&nbsp;d'un&nbsp;tableau&nbsp;de&nbsp;tuple&nbsp;avec&nbsp;une&nbsp;valeur&nbsp;negative<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Exception&nbsp;lors&nbsp;de&nbsp;la&nbsp;construction&nbsp;d'un&nbsp;tab_tuples&nbsp;à&nbsp;partir&nbsp;d'un&nbsp;tableau&nbsp;contenant&nbsp;un&nbsp;tuple&nbsp;dont&nbsp;la&nbsp;somme&nbsp;des&nbsp;valeurs&nbsp;est&nbsp;&gt;&nbsp;10</tt></dd></dl>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Exception&nbsp;lors&nbsp;de&nbsp;la&nbsp;construction&nbsp;d'un&nbsp;tab_tuples&nbsp;à&nbsp;partir&nbsp;d'un&nbsp;tableau&nbsp;contenant&nbsp;un&nbsp;tuple&nbsp;dont&nbsp;la&nbsp;somme&nbsp;des&nbsp;valeurs&nbsp;est&nbsp;&gt;&nbsp;10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Exception&nbsp;lors&nbsp;de&nbsp;la&nbsp;construction&nbsp;d'un&nbsp;tab_tuples&nbsp;à&nbsp;partir&nbsp;d'un&nbsp;tableau&nbsp;contenant&nbsp;un&nbsp;tuple&nbsp;contenant&nbsp;un&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Exception&nbsp;lors&nbsp;de&nbsp;la&nbsp;construction&nbsp;d'un&nbsp;tab_tuples&nbsp;à&nbsp;partir&nbsp;d'un&nbsp;tableau&nbsp;contenant&nbsp;un&nbsp;tuple&nbsp;contenant&nbsp;un&nbsp;char<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Exception&nbsp;lors&nbsp;de&nbsp;la&nbsp;construction&nbsp;d'un&nbsp;tab_tuples&nbsp;à&nbsp;partir&nbsp;d'un&nbsp;tableau&nbsp;contenant&nbsp;un&nbsp;tuple&nbsp;contenant&nbsp;un&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Exception&nbsp;lors&nbsp;de&nbsp;la&nbsp;construction&nbsp;d'un&nbsp;tab_tuples&nbsp;à&nbsp;partir&nbsp;d'un&nbsp;tableau&nbsp;contenant&nbsp;un&nbsp;tuple&nbsp;contenant&nbsp;une&nbsp;liste&nbsp;de&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Exception&nbsp;lors&nbsp;de&nbsp;la&nbsp;construction&nbsp;d'un&nbsp;tab_tuples&nbsp;à&nbsp;partir&nbsp;d'un&nbsp;tableau&nbsp;contenant&nbsp;un&nbsp;tuple&nbsp;contenant&nbsp;un&nbsp;set<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Exception&nbsp;lors&nbsp;de&nbsp;la&nbsp;construction&nbsp;d'un&nbsp;tab_tuples&nbsp;à&nbsp;partir&nbsp;d'un&nbsp;tableau&nbsp;contenant&nbsp;un&nbsp;tuple&nbsp;contenant&nbsp;un&nbsp;complexe<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Exception&nbsp;lors&nbsp;de&nbsp;la&nbsp;construction&nbsp;d'un&nbsp;tab_tuples&nbsp;à&nbsp;partir&nbsp;d'un&nbsp;tableau&nbsp;contenant&nbsp;un&nbsp;tuple&nbsp;contenant&nbsp;lui&nbsp;même&nbsp;un&nbsp;tuple&nbsp;avec&nbsp;des&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Exception&nbsp;lors&nbsp;de&nbsp;la&nbsp;construction&nbsp;d'un&nbsp;tab_tuples&nbsp;à&nbsp;partir&nbsp;d'un&nbsp;tableau&nbsp;contenant&nbsp;un&nbsp;tuple&nbsp;contenant&nbsp;un&nbsp;dictionnaire.</tt></dd></dl>
 
 <dl><dt><a name="Test_tab_tuples-test_lancer_Jeu"><strong>test_lancer_Jeu</strong></a>(self)</dt><dd><tt>Tests&nbsp;de&nbsp;lancer_jeu&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Strike&nbsp;au&nbsp;round&nbsp;10&nbsp;+&nbsp;2&nbsp;coups&nbsp;supplémentaires&nbsp;(2&nbsp;et&nbsp;5)<br>
