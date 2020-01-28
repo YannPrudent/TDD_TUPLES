@@ -1,3 +1,6 @@
+#Commentaire Yann Prudent
+Certain tests n'arrivent qu'après et le Readme n'est pas très à jour
+16/20
 # TDD_TUPLES
 TDD_TUPLES
 
